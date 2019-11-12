@@ -30,7 +30,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    'plugins/vuetify'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -55,7 +57,10 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          twitter: '#55acee',
+          facebook: '#3b5998',
+          background: colors.grey.lighten5
         }
       }
     }
@@ -64,6 +69,7 @@ export default {
    ** Build configuration
    */
   build: {
+    transpile: ['vuetify/lib'],
     /*
      ** You can extend webpack config here
      */
