@@ -40,6 +40,7 @@
                 <v-btn
                   text
                   color="primary"
+                  :to="linkTo(post)"
                 >
                   この記事をみる
                 </v-btn>
@@ -65,6 +66,11 @@ export default {
       order: '-fields.publishDate'
     }).then(res => (posts = res.items)).catch(console.error)
     return { posts }
-  }
+  },
+  computed: {
+    linkTo: () => (obj) => {
+      return { name: 'posts-slug', params: { slug: obj.fields.slug } }
+    }
+  },
 };
 </script>
